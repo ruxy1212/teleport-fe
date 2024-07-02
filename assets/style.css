@@ -7,6 +7,8 @@ html, body {
 }
 section {
     display: flex;
+    max-width: 1020px;
+    margin: 0 auto;
 }
 section main {
     padding: 1rem;
