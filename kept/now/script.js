@@ -27,7 +27,6 @@ window.onload = function(){
         const currentDay = days[d.getUTCDay()], currentUTC = d.getTime();
         document.querySelector('h4[data-testid="currentDay"]').textContent = currentDay;
         document.querySelector('h4[data-testid="currentTimeUTC"]').textContent = currentUTC;
-        document.querySelector('.full-year').textContent = d.getFullYear();
     }, 1000);
 
 }
