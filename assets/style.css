@@ -118,7 +118,7 @@ section aside {
         }
         & a:active {
             transform: scale(0.95);
-            box-shadow: 0 0 .12rem .08rem rgba(89, 35, 217, 0.3);
+            box-shadow: 0 0 .12rem .12rem rgba(89, 35, 217, 0.3);
         }
     } 
 }
