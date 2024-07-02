@@ -16,7 +16,7 @@ header {
     padding: 1rem;
     justify-content: space-between;
     backdrop-filter: blur(6px);
-    background: rgba(0, 0, 0, 0.587);
+    background: rgba(10, 10, 40, 0.87);
     border-bottom: 2px solid white;
     z-index: 2;
     & h4 {
@@ -26,7 +26,7 @@ header {
 }
 .hero {
     --s: 81px;
-    --c1: #1c1c1c;
+    --c1: #c3c3c3;
     --c2: #431b82;
     --_g: var(--c1) 90deg, var(--c2) 0 135deg, #0000 0;
     background: conic-gradient(from -45deg at calc(100%/3) calc(100%/3), var(--c1) 90deg, #0000 0),
@@ -39,7 +39,7 @@ header {
     justify-content: center;
     align-items: center;
     & .profile-box {
-        background: rgba(93, 94, 185, 0.07);
+        background: rgba(50, 45, 128, 0.7);
         padding: 3rem 1.5rem;
         width: 80%;
         max-width: 992px;
@@ -60,6 +60,7 @@ header {
         }
         & .text {
             & h2 {
+                user-select: none;
                 font-size: 3rem;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
                 color: white;
@@ -72,20 +73,15 @@ header {
                 color: rgb(225, 225, 225);
                 margin-top: .5rem;
             }
-        }
-        & .details .group div {
-            margin: 1rem 0;
-            & h4 {
-                display: inline;
-            }
-            & p, h4 {
-                margin: 0;
+            & p {
+                user-select: none;
             }
         }
     }
 }
 .main{
     max-width: 1020px;
+    user-select: none;
     margin: 3rem auto 0;
     padding: 1rem;
     & ul{
@@ -110,7 +106,7 @@ header {
         height: 0;
         width: calc(50% - 1rem);
         margin: 0;
-        padding: 1rem .5rem;
+        padding: 1rem; /* .5rem */
         overflow: hidden;
         opacity: 0;
         transform: rotateX(-90deg);
@@ -166,11 +162,46 @@ header {
 } 
 
 footer{
-    padding: .75rem 1.5rem;
-    background: #1c1c1c;
+    padding: 1rem 1.5rem;
+    background: #545454;
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.mode-switch{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    height: 3.2rem;
+    width: 3.2rem;
+    padding: calc((3.2rem - (2.8rem + (.125rem * 2))) / 2);
+    border-radius: 50%;
+    border: .125rem solid white;
+    box-shadow: 0 0 4px 5px #1c1c1c;
+    background: #1c1c1c;
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+    & svg {
+        display: none;
+        height: 2.8rem;
+        width: 2.8rem;
+    }
+    & .light-mode svg:nth-child(2) {
+        display: block;
+    }
+    & .dark-mode svg:nth-child(1) {
+        display: block;
+    }
+}
+.mode-switch:hover{
+    filter: brightness(0.9);
+    -webkit-filter: brightness(0.9);
+}
+.mode-switch:active{
+    transform: scale(0.9);
+    box-shadow: 0 0 2px 2px #1c1c1c;
 }
 
 @media (max-width: 765px){
@@ -215,4 +246,66 @@ footer{
             width: 200px;
         }
     } 
+    .mode-switch{
+        position: fixed;
+        bottom: 1.6rem;
+        right: 1.6rem;
+        height: 2.7rem;
+        width: 2.7rem;
+        padding: calc((2.7rem - (2.45rem + (.125rem * 2))) / 2);
+        border-radius: 50%;
+        border: .125rem solid white;
+        box-shadow: 0 0 4px 5px #1c1c1c;
+        background: #1c1c1c;
+        color: white;
+        & svg {
+            display: none;
+            height: 2.45rem;
+            width: 2.45rem;
+        }
+    }
+}
+
+.dark {
+    & body {
+        background: #1c1c1c;
+    }
+    & header {
+        background: rgba(0, 0, 0, 0.587);
+    }
+    & .hero {
+        --c1: #1c1c1c;
+        & .profile-box {
+            background:  rgba(93, 94, 185, 0.07);
+        }
+    }
+    & .main {
+        & h1{
+            color: white;
+            text-shadow: .8px 1px red;
+        }
+        & li{
+            color: white;
+            background: #222;
+            box-shadow: inset 0px 0px 3px;
+            & p {
+                color: #eee;
+            }
+        }
+    }
+    & .link-box {
+        & a:hover {
+            background: rgba(193, 194, 185, 0.17);
+            border-color: white;
+        }
+    }
+    .mode-switch{
+        border-color: #1c1c1c;
+        box-shadow: 0 0 4px 5px white;
+        background: white;
+        color: #1c1c1c;
+    }
+    /* footer {
+        background:  #1c1c1c;
+    } */
 }

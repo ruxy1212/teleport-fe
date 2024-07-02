@@ -30,4 +30,26 @@ window.onload = function(){
         document.querySelector('.full-year').textContent = d.getFullYear();
     }, 1000);
 
+    let currentTheme = localStorage.getItem('hng-1-fe'),
+        switchBtn = document.querySelector('.mode-switch .mode');
+    if(currentTheme){
+        if(currentTheme == 'dark') {
+            document.documentElement.className='dark';
+            switchBtn.className='mode dark-mode'
+        }else{
+            document.documentElement.className='light';
+            switchBtn.className='mode light-mode'
+        }
+    }
+    document.querySelector('.mode-switch').addEventListener('click', () => {
+        if(switchBtn.classList.contains('dark-mode')){
+            localStorage.setItem('hng-1-fe', 'light');
+            document.documentElement.className='light';
+            switchBtn.className='mode light-mode'
+        }else{
+            localStorage.setItem('hng-1-fe', 'dark');
+            document.documentElement.className='dark';
+            switchBtn.className='mode dark-mode'
+        }    
+    });
 }
