@@ -185,7 +185,7 @@ section aside {
     }
 }
 @media (max-width: 480px){
-    .aside-container .link-box, alternate-container .link-box {
+    .aside-container .link-box, .alternate-container .link-box {
         flex-direction: column;
         & a{
             display: inline;
