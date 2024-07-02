@@ -116,6 +116,10 @@ section aside {
             background: rgba(93, 94, 185, 0.17);
             color: rgb(236, 73, 73);
         }
+        & a:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 .12rem .08rem rgba(89, 35, 217, 0.3);
+        }
     } 
 }
 .alternate-container{
