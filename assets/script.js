@@ -24,9 +24,13 @@ window.onload = function(){
     setInterval(() => {
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const d = new Date();
-        const currentDay = days[d.getUTCDay()], currentUTC = d.getTime();
+        const currentDay = days[d.getUTCDay()],
+            hours = now.getUTCHours().toString().padStart(2, '0'), 
+            minutes = now.getUTCMinutes().toString().padStart(2, '0'),
+            seconds = now.getUTCSeconds().toString().padStart(2, '0');
+            // currentUTC = d.getTime();
         document.querySelector('h4[data-testid="currentDay"]').textContent = currentDay;
-        document.querySelector('h4[data-testid="currentTimeUTC"]').textContent = currentUTC;
+        document.querySelector('h4[data-testid="currentTimeUTC"]').textContent = `${hours}:${minutes}:${seconds}`;
         document.querySelector('.full-year').textContent = d.getFullYear();
     }, 1000);
 
