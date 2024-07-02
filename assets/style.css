@@ -117,6 +117,7 @@ section aside {
             color: rgb(236, 73, 73);
         }
         & a:active {
+            transition: none;
             transform: scale(0.95);
             box-shadow: 0 0 .12rem .12rem rgba(89, 35, 217, 0.3);
         }
