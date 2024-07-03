@@ -110,8 +110,9 @@ header {
         padding: 1rem; /* .5rem */
         overflow: hidden;
         opacity: 0;
-        transform: rotateX(-90deg);
-        transition: all .5s cubic-bezier(.36,-0.64,.34,1.76);
+        /* transform: rotateX(-90deg);
+        transition: all .5s cubic-bezier(.36,-0.64,.34,1.76); */
+        transition: all .4s ease-out;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         box-shadow: inset 0px 0px 3px;
     }
