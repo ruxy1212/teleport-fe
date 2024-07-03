@@ -17,7 +17,7 @@ window.onload = function(){
             liTitle.innerHTML = (index+1)+'. '+goal[0], liText1.innerHTML = goal[1], liText2.innerHTML = goal[2];
             [liTitle, liText1, liText2].forEach(node => newLi.appendChild(node));
             list.appendChild(newLi);
-            setTimeout(() => {newLi.className = newLi.className+'show fade swing'}, 10)
+            setTimeout(() => {newLi.className = newLi.className+'show fade'}, 10)
         }, 1000*index);
     });
 
