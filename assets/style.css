@@ -116,6 +116,9 @@ header {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         box-shadow: inset 0px 0px 3px;
     }
+    & li:hover{
+        transform: scale(1.1);
+    }
     & li.show{
         height: auto;
     }
